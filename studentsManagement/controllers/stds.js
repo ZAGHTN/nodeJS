@@ -6,7 +6,6 @@ const stdModel = require('../models/stds.js');
 // للوصول إلى الدوال  التي هي بالملف،نقوم بعملية تصدير
 module.exports = {
 	/**إلى ما إذا كان قد تم تنفيذ الطلب بنجاح أم لا HTTP تشير أكواد حالة استجابة
-	 * Response status codes
 	 *
 	 * يتم تجميع الردود في خمس فئات
 	 * (100 - 199) ردود إعلامية
@@ -14,6 +13,8 @@ module.exports = {
 	 * (300 - 399) إعادة توجيه الرسائل
 	 * (400 – 499) (client)استجابات الخطأ
 	 * (500 – 599) (server)استجابات الخطأ
+	 *
+	 * Response status codes
 	*/
 
 	// جلب كل الطُلاب من قاعدة البيانات
@@ -99,7 +100,7 @@ module.exports = {
 			});
 		}
 	},
-	//(table in mysql) collection حذف بيانات من 
+	//(table in mysql) collection حذف بيانات من
 	// Delete data from collection
 	delete:  async (req, res) => {
 		if (req.params.id == '') {
