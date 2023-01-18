@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<title><%=locals.title ? title:"الرئيسية"%></title>
+		
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		
+		<link href="/css/bootstrap.rtl.min.css" rel="stylesheet">
+		<link href="/css/style.css" rel="stylesheet">
+		
+		<noscript>
+		يرجى تفعيل خاصية JavaScript في المتصفح ، لمتابعة استخدام هذا التطبيق.
+		</noscript>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row mx-auto align-items-center">
+				<div class="col-11">
+					<h1 class="text-center mb-4">
+						<u><%=locals.hading ? hading:title %></u>
+					</h1>
+				</div>
+				<div class="col-1">
+					<a class="btn btn-warning btn-sm" role="button" 
+						href="/" title="Refresh">
+						<i class="fa-solid fa-arrows-rotate fa-xs"></i>
+					</a>
+				</div>
+			</div>
+			<div class="row mx-auto">
+				<form class="row align-items-center mb-5" action="/create" method="post">
+					<h2 class="text-white">أَضِـف طـالـب:</h2>
+					<div class="col-auto">
+						<label class="visually-hidden" for="name">
+							إسـم الـطّالـب
+						</label>
+						<div class="input-group">
+							<input type="text" class="form-control" id="name" name="name"
+							placeholder="إسـم الـطّالـب">
+						</div>
+					</div>
+					<div class="col-auto">
+						<label class="visually-hidden" for="age">
+							عُـمُـرُ الطّالـب
+						</label>
+						<div class="input-group">
+							<input type="text" class="form-control" id="age" name="age"
+							placeholder="عُـمُـرُ الطّالـب">
+						</div>
+					</div>
+					<div class="col-auto">
+						<button type="submit" class="btn btn-warning">
+						<i class="fa-regular fa-paper-plane"></i> أضِــف
+						</button>
+					</div>
+				</form>
+				<% if(locals.info){%>
+					<div class="w-50 mx-auto">
+						<div class="alert alert-<%=info.type%> 
+							d-flex align-items-center" role="alert"><%=info.msg%>
+							<button type="button" class="btn-close"
+								data-bs-dismiss="alert" aria-label="Close">
+							</button>
+						</div>
+					</div>
+				<%} %>
+				<% if(locals.stds && stds.length > 0){%>
+					<table class="table">
+						<caption class="caption-top text-warning">قائمة الطلاب</caption>
+						<thead>
+							<tr>
+							  <th scope="col">الإسـم</th>
+							  <th scope="col">العُمُر</th>
+							  <th scope="col">العمليات</th>
+							</tr>
+						</thead>
+						<tbody>
+							<% stds.forEach(std =>{%>
+							<tr>
+							  <td><%=std.name%></td>
+							  <td><%=std.age%></td>
+							  <td>
+								<a class="btn btn-warning btn-sm" role="button" href="/update/<%=std.id%>" title="Update">
+								<i class="fa-solid fa-pen-to-square"></i>
+								</a>
+								<a class="btn btn-danger btn-sm" role="button" href="/delete/<%=std._id%>?_method=delete" title="Delete">
+								<i class="fa-regular fa-trash-can"></i>
+								</a>
+							  </td>
+							</tr>
+							<%}) %>
+						</tbody>
+					</table>
+				<%} else{%>
+					<p class="text-warning">لا يوجد لديك طُلاب</p>
+				<%} %>
+			</div>
+		</div>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.bundle.min.js"></script>
+	</body>
+</html>
