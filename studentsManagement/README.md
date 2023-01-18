@@ -39,7 +39,7 @@ The second step is to [install MongoDB Compass](https://www.mongodb.com/docs/com
 
 ![Screenshot](screenshot-3.png)
 
-![Screenshot](.\screenshot-2.png)
+![Screenshot](screenshot-2.png)
 
 ----------
 
