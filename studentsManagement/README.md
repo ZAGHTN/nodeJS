@@ -12,7 +12,7 @@ MongoDB is a source-available cross-platform document-oriented database program.
 ----------
 
 # Installation
-Node.js dowloads**:**
+Node.js dowloads:
 > [Node.js for windows](https://nodejs.org/en/download/)
 
 > [Linux or other operating systems](https://github.com/nodesource/distributions)
@@ -28,16 +28,16 @@ The second step is to [install MongoDB Compass](https://www.mongodb.com/docs/com
 "mongod"
 - Start our application with node.js *( Editor )***:**
 "node main" | "node main.js"
-- Go to "http://localhost:3000/" on the browser to test
+- Go to http://localhost:3000/ on the browser to test
 
 ----------
 
 # Screenshots
-![Screenshot]('./screenshot-4.png')
+![Screenshot](screenshot-4.png)
 
-![Screenshot]('.\screenshot-1.png')
+![Screenshot](screenshot-1.png)
 
-![Screenshot]('.\screenshot-3.png')
+![Screenshot](screenshot-3.png)
 
 ![Screenshot](.\screenshot-2.png)
 
