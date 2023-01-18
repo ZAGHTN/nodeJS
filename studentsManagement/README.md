@@ -33,11 +33,11 @@ The second step is to [install MongoDB Compass](https://www.mongodb.com/docs/com
 ----------
 
 # Screenshots
-![Screenshot](.\screenshot-4.png)
+![Screenshot]('./screenshot-4.png')
 
-![Screenshot](.\screenshot-1.png)
+![Screenshot]('.\screenshot-1.png')
 
-![Screenshot](.\screenshot-3.png)
+![Screenshot]('.\screenshot-3.png')
 
 ![Screenshot](.\screenshot-2.png)
 
